@@ -1,0 +1,105 @@
+---
+import NextJS from "../Icons/NextJS.astro"
+import Tailwind from "../Icons/Tailwind.astro"
+import Bootstrap from "../Icons/Bootstrap.astro"
+import Spring from "../Icons/Spring.astro"
+import React from "../Icons/React.astro"
+import FilledGitHub from "../Icons/FilledGitHub.astro"
+import SocialPill from "./SocialPill.astro"
+import Link from "../Icons/Link.astro"
+import AstroIcon from "../Icons/AstroIcon.astro"
+
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-[#441c71] text-white",
+    icon: Bootstrap,
+  },
+  SPRING: {
+    name: "Spring",
+    class: "bg-[#2C431C] text-white",
+    icon: Spring,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-[#3b8799] text-white",
+    icon: React,
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-[#5f2f10] text-white",
+    icon: AstroIcon,
+  },
+}
+const PROJECTS = [
+  {
+    hdescription: "Web-App.",
+    title: "JobChamb - job finder web side",
+    description:
+      "A Web-App for job offer/search, who si focused on help people to find, and their work.",
+    link: "#",
+    github: "https://github.com",
+    image: "/proyects/jobchamb.webp",
+    tags: [TAGS.SPRING, TAGS.REACT, TAGS.BOOTSTRAP],
+  },
+  {
+    hdescription: "Web-Page.",
+    title: "Ganadería San Antonio - Farm web side",
+    description:
+      "A Web-Page for a farm, who is focused on show the farm.",
+    link: "#",
+    github: "https://github.com",
+    image: "/proyects/GSA.webp",
+    tags: [TAGS.ASTRO],
+  },
+]
+---
+
+{
+  PROJECTS.map(({ hdescription, image, title, description, tags, github, link }) => (
+    <article>
+        <p class="text-m font-bold text-pretty text-gray-500">{hdescription}</p>
+      <h3 class="text-2xl font-semibold text-[#8FFF00] mb-2">
+        {title}
+      </h3>
+      <p class="text-m mb-4 font-semibold text-gray-500 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        loading="lazy"
+        class="rounded shadow-2xl shadow-white/10 aspect-video"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${image}`}
+      />
+      <div class="flex">
+        <SocialPill href={github}>
+          <FilledGitHub  class="size-4 md:size-6" />
+        </SocialPill>
+        <SocialPill href={link}>
+          <Link class="size-4 md:size-6" />
+        </SocialPill>
+        </div>
+    </article>
+  ))
+}

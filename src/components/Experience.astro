@@ -1,0 +1,42 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+    {
+        title: 'Manager Ingeeniering on JobChamb',
+        date: 'Current',
+        description: 'leader of the team of engineers in the development of the JobChamb platform, including technologies such as React, .Net, Mysql, among others.',
+        version: 'Latest',
+        link: 'https://flowbite.com/docs/application-ui/'
+    },
+    {
+        title: 'Data Analist on Super Remate',
+        date: 'Current',
+        description: 'Data analysis for the Super Remate platform, using technologies such as Python, Pandas, among others to generate reports and data analysis among different stores.',
+        version: 'Latest',
+        link: 'https://flowbite.com/docs/application-ui/'
+    },
+    {
+        title: 'Web Developer on Ganaderia San Antonio',
+        date: 'October 21th, 2023',
+        description: 'Development of the web platform for the company Ganaderia San Antonio.',
+        version: 'Latest',
+        link: 'https://flowbite.com/docs/application-ui/'
+    },
+    {
+        title: 'Robotic tutor on school',
+        date: 'July 15th, 2023',
+        description: 'Capacitation of students in the area of robotics, with the use of the arduino platform, and the development of projects with the use of the same. using technologies such as C, Arduino.',
+        version: 'Latest',
+        link: 'https://flowbite.com/docs/application-ui/'
+    },
+]
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">                  
+    {
+        EXPERIENCE.map((experience) => (
+            <ExperienceItem {...experience} />
+        ))
+    }
+</ol>
+

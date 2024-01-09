@@ -1,0 +1,38 @@
+---
+import AboutMe from '../components/AboutMe.astro';
+import Experience from '../components/Experience.astro';
+import Proyectos from '../components/Proyectos.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Layout from '../layouts/Layout.astro';
+import ContactMe from '../components/ContactMe.astro';
+---
+
+<Layout title="Gio's Portfolio - Backend Developer." description="Welcome to Gio's Portfolio! I am a skilled backend developer with over 2 years of experience. I specialize in web app development, API creation, and MySQL databases. Join me as I showcase my projects and expertise in the world of backend development.">
+	<main>
+		<SectionContainer>
+			<h1 style="color: #8FFF00;" class="text-white text-5xl font-bold pb-4 pt-48">Back-End Developer</h1>
+			<h2 class="text-xl text-gray-500">I'm</h2>
+			<h1 class="text-3xl">Giovanny Jovane</h1>
+			<h2 id="experience" class="text-xl text-gray-500">+2 years. Development and deployment of Web App, API, Data Bases MySQL. Have Worked, on the design and development of dedicated apps, with a great aptitude on team work.</h2>
+		</SectionContainer>
+		<SectionContainer>
+			<h1 class="text-3xl font-bold py-4">Experience</h1>
+			<Experience />
+			<div id="projects"></div>
+		</SectionContainer>
+		<SectionContainer >
+			<h1 class="text-3xl font-bold py-4">Projects</h1>
+			<Proyectos />
+			<div id="aboutme"></div>
+		</SectionContainer>
+		<SectionContainer id="aboutme">
+			<h1 class="text-3xl font-bold py-4">About Me</h1>
+			
+			<AboutMe/>
+		</SectionContainer>
+		<SectionContainer id="contactme">
+			<h1 class="text-3xl font-bold py-4 text-center">Contact Me</h1>
+			<ContactMe/>
+		</SectionContainer>
+	</main>
+</Layout>
